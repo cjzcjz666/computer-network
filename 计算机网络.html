@@ -1,0 +1,1472 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+
+</style><title>计算机网络</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='计算机网络'><span>计算机网络</span></h1><h2 id='一计算机网络概述'><span>一、计算机网络概述</span></h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztiuhga7g30u016ithw.gif" referrerpolicy="no-referrer" alt="9b0e259a058e1e338ab3e50e728a2156"></p><h3 id='11-计算机网络的分类'><span>1.1 计算机网络的分类</span></h3><p><span>按照网络的作用范围：广域网（WAN）、城域网（MAN）、局域网（LAN）；</span>
+<span>按照网络使用者：公用网络、专用网络。</span></p><h3 id='12-计算机网络的层次结构'><span>1.2 计算机网络的层次结构</span></h3><p><span>TCP/IP四层模型与OSI体系结构对比：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztjz2n1sj30h908cgm5.jpg" referrerpolicy="no-referrer" alt="c2b921fd2023201a457a2b07fe3e8e9a"></p><h3 id='13-层次结构设计的基本原则'><span>1.3 层次结构设计的基本原则</span></h3><p><span>各层之间是相互独立的；</span>
+<span>每一层需要有足够的灵活性；</span>
+<span>各层之间完全解耦。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztkct5q6j31bh0qxdj5.jpg" referrerpolicy="no-referrer" alt="ca899d9a067e8c6d6650f1b5f229648b"></p><h3 id='14-计算机网络的性能指标'><span>1.4 计算机网络的性能指标</span></h3><p><span>速率：bps=bit/s</span>
+<span>时延：发送时延、传播时延、排队时延、处理时延</span>
+<span>往返时间RTT：数据报文在端到端通信中的来回一次的时间。</span></p><h2 id='二物理层'><span>二、物理层</span></h2><p><span>物理层的作用：连接不同的物理设备，传输比特流。该层为上层协议提供了一个传输数据的可靠的物理媒体。简单的说，物理层确保原始的数据可在各种物理媒体上传输。</span></p><p><span>物理层设备：</span></p><p><span>中继器【Repeater，也叫放大器】：同一局域网的再生信号；两端口的网段必须同一协议；5-4-3规程： 10BASE-5以太网中，最多串联4个中继器，5段中只能有3个连接主机；</span>
+<span>集线器：同一局域网的再生、放大信号（多端口的中继器）；半双工，不能隔离冲突域也不能隔离广播域。</span>
+<span>信道的基本概念：信道是往一个方向传输信息的媒体，一条通信电路包含一个发送信道和一个接受信道。</span></p><p><span>单工通信信道：只能一个方向通信，没有反方向反馈的信道；</span>
+<span>半双工通信信道：双方都可以发送和接受信息，但不能同时发送也不能同时接收；</span>
+<span>全双工通信信道：双方都可以同时发送和接收。</span></p><h2 id='三数据链路层'><span>三、数据链路层</span></h2><h3 id='31-数据链路层概述'><span>3.1 数据链路层概述</span></h3><p><span>数据链路层在物理层提供的服务的基础上向网络层提供服务，其最基本的服务是将源自网络层来的数据可靠地传输到相邻节点的目标机网络层。数据链路层在不可靠的物理介质上提供可靠的传输。</span></p><p><span>该层的作用包括：物理地址寻址、数据的成帧、流量控制、数据的检错、重发等。</span></p><p><span>有关数据链路层的重要知识点：</span></p><p><span>数据链路层为网络层提供可靠的数据传输；</span>
+<span>基本数据单位为帧；</span>
+<span>主要的协议：以太网协议；</span>
+<span>两个重要设备名称：网桥和交换机。</span>
+<span>封装成帧：“帧”是数据链路层数据的基本单位：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztktgrslj30yv0b275d.jpg" referrerpolicy="no-referrer" alt="969de8a50812f7772ed5cfef6969bef1"></p><p><span>透明传输：“透明”是指即使控制字符在帧数据中，但是要当做不存在去处理。即在控制字符前加上转义字符ESC。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztl1u6ewj30yk0b00tj.jpg" referrerpolicy="no-referrer" alt="40172930e675aa1e9b6d4852239144fc"></p><h3 id='32-数据链路层的差错监测'><span>3.2 数据链路层的差错监测</span></h3><p><span>差错检测：奇偶校验码、循环冗余校验码CRC</span></p><p><span>奇偶校验码–局限性：当出错两位时，检测不到错误。</span>
+<span>循环冗余检验码：根据传输或保存的数据而产生固定位数校验码。</span></p><h3 id='33-最大传输单元mtu'><span>3.3 最大传输单元MTU</span></h3><p><span>最大传输单元MTU(Maximum Transmission Unit)，数据链路层的数据帧不是无限大的，数据帧长度受MTU限制.</span></p><p><span>路径MTU：由链路中MTU的最小值决定。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztlccqphj31c40r642n.jpg" referrerpolicy="no-referrer" alt="437533a74e891aa9c7dcd3ccb94440a4"></p><h3 id='34-以太网协议详解'><span>3.4 以太网协议详解</span></h3><p><span>MAC地址：每一个设备都拥有唯一的MAC地址，共48位，使用十六进制表示。</span></p><p><span>以太网协议：是一种使用广泛的局域网技术，是一种应用于数据链路层的协议，使用以太网可以完成相邻设备的数据帧传输：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztlk38oqj30zz06ldg6.jpg" referrerpolicy="no-referrer" alt="06765dad404a72429bead8950c219c10"></p><p><span>局域网分类：</span></p><p><span>Ethernet以太网IEEE802.3：</span></p><p><span>以太网第一个广泛部署的高速局域网</span>
+<span>以太网数据速率快</span>
+<span>以太网硬件价格便宜，网络造价成本低</span>
+<span>以太网帧结构：</span></p><p><span>类型：标识上层协议（2字节）</span>
+<span>目的地址和源地址：MAC地址（每个6字节）</span>
+<span>数据：封装的上层协议的分组（46~1500字节）</span>
+<span>CRC：循环冗余码（4字节）</span>
+<span>以太网最短帧：以太网帧最短64字节；以太网帧除了数据部分18字节；数据最短46字节；</span>
+<span>MAC地址（物理地址、局域网地址）</span></p><p><span>MAC地址长度为6字节，48位；</span>
+<span>MAC地址具有唯一性，每个网络适配器对应一个MAC地址；</span>
+<span>通常采用十六进制表示法，每个字节表示一个十六进制数，用 - 或 : 连接起来；</span>
+<span>MAC广播地址：FF-FF-FF-FF-FF-FF。</span></p><h2 id='四网络层'><span>四、网络层</span></h2><p><span>网络层的目的是实现两个端系统之间的数据透明传送，具体功能包括寻址和路由选择、连接的建立、保持和终止等。数据交换技术是报文交换（基本上被分组所替代）：采用储存转发方式，数据交换单位是报文。</span></p><p><span>网络层中涉及众多的协议，其中包括最重要的协议，也是TCP/IP的核心协议——IP协议。IP协议非常简单，仅仅提供不可靠、无连接的传送服务。IP协议的主要功能有：无连接数据报传输、数据报路由选择和差错控制。与IP协议配套使用实现其功能的还有地址解析协议ARP、逆地址解析协议RARP、因特网报文协议ICMP、因特网组管理协议IGMP。具体的协议我们会在接下来的部分进行总结，有关网络层的重点为：</span></p><p><span>1.网络层负责对子网间的数据包进行路由选择。此外，网络层还可以实现拥塞控制、网际互连等功能；</span></p><p><span>2.基本数据单位为IP数据报；</span></p><p><span>3.包含的主要协议：</span></p><p><span>IP协议（Internet Protocol，因特网互联协议）;</span>
+<span>ICMP协议（Internet Control Message Protocol，因特网控制报文协议）;</span>
+<span>ARP协议（Address Resolution Protocol，地址解析协议）;</span>
+<span>RARP协议（Reverse Address Resolution Protocol，逆地址解析协议）。</span>
+<span>4.重要的设备：路由器。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztm05gfwj31cu0mkad4.jpg" referrerpolicy="no-referrer" alt="e976bb4dcb58a55615d825b0a808ebf0"></p><h3 id='41-ip协议详解'><span>4.1 IP协议详解</span></h3><p><span>IP网际协议是 Internet 网络层最核心的协议。虚拟互联网络的产生：实际的计算机网络错综复杂；物理设备通过使用IP协议，屏蔽了物理网络之间的差异；当网络中主机使用IP协议连接时，无需关注网络细节，于是形成了虚拟网络。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztm7yv6jj31020bl0t8.jpg" referrerpolicy="no-referrer" alt="1512f8a9907449f746288ef22db5fa3a"></p><p><span>IP协议使得复杂的实际网络变为一个虚拟互联的网络；并且解决了在虚拟网络中数据报传输路径的问题。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztmgeem0j30hv06xaak.jpg" referrerpolicy="no-referrer" alt="dc7ef170f6522ce68e09c59f0450ab14"></p><p><span>其中，版本指IP协议的版本，占4位，如IPv4和IPv6；首部位长度表示IP首部长度，占4位，最大数值位15；总长度表示IP数据报总长度，占16位，最大数值位65535；TTL表示IP数据报文在网络中的寿命，占8位；协议表明IP数据所携带的具体数据是什么协议的，如TCP、UDP。</span></p><h3 id='42-ip协议的转发流程'><span>4.2 IP协议的转发流程</span></h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztmsrlggj30wc0g5myo.jpg" referrerpolicy="no-referrer" alt="2b15d397bb6ae792c4f786a39a3a3a1e"></p><h3 id='43-ip地址的子网划分'><span>4.3 IP地址的子网划分</span></h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztmzlveuj30i406fgmc.jpg" referrerpolicy="no-referrer" alt="81ecde62bf5383da3864b011575d436d"></p><p><span>A类（8网络号+24主机号）、B类（16网络号+16主机号）、C类（24网络号+8主机号）可以用于标识网络中的主机或路由器，D类地址作为组广播地址，E类是地址保留。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztn65kr1j31ej09876z.jpg" referrerpolicy="no-referrer" alt="ccc6e95f8657ca6094042cfaa0c21b6c"></p><h3 id='44-网络地址转换nat技术'><span>4.4 网络地址转换NAT技术</span></h3><p><span>用于多个主机通过一个公有IP访问访问互联网的私有网络中，减缓了IP地址的消耗，但是增加了网络通信的复杂度。</span></p><p><span>NAT 工作原理：</span></p><p><span>从内网出去的IP数据报，将其IP地址替换为NAT服务器拥有的合法的公共IP地址，并将替换关系记录到NAT转换表中；</span>
+<span>从公共互联网返回的IP数据报，依据其目的的IP地址检索NAT转换表，并利用检索到的内部私有IP地址替换目的IP地址，然后将IP数据报转发到内部网络。</span></p><h3 id='45-arp协议与rarp协议'><span>4.5 ARP协议与RARP协议</span></h3><p><span>地址解析协议 ARP（Address Resolution Protocol）：为网卡（网络适配器）的IP地址到对应的硬件地址提供动态映射。可以把网络层32位地址转化为数据链路层MAC48位地址。</span></p><p><span>ARP 是即插即用的，一个ARP表是自动建立的，不需要系统管理员来配置。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztnm759xj30zn0av0v5.jpg" referrerpolicy="no-referrer" alt="442e827fe069e4958f4cbedcc2f2fa13"></p><p><span>RARP(Reverse Address Resolution Protocol)协议指逆地址解析协议，可以把数据链路层MAC48位地址转化为网络层32位地址。</span></p><h3 id='46-icmp协议详解'><span>4.6 ICMP协议详解</span></h3><p><span>网际控制报文协议（Internet Control Message Protocol），可以报告错误信息或者异常情况，ICMP报文封装在IP数据报当中。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztnuk5ndj30zv0ew0ud.jpg" referrerpolicy="no-referrer" alt="c5171aa88d22fe5055d682bb1d9681de"></p><p><span>ICMP协议的应用：</span></p><p><span>Ping应用：网络故障的排查；</span>
+<span>Traceroute应用：可以探测IP数据报在网络中走过的路径。</span></p><h3 id='47网络层的路由概述'><span>4.7网络层的路由概述</span></h3><p><span>关于路由算法的要求：正确的完整的、在计算上应该尽可能是简单的、可以适应网络中的变化、稳定的公平的。</span>
+<span>自治系统AS：指处于一个管理机构下的网络设备群，AS内部网络自治管理，对外提供一个或多个出入口，其中自治系统内部的路由协议为内部网关协议，如RIP、OSPF等；自治系统外部的路由协议为外部网关协议，如BGP。</span></p><p><span>静态路由：人工配置，难度和复杂度高；</span></p><p><span>动态路由：</span></p><p><span>链路状态路由选择算法LS：向所有隔壁路由发送信息收敛快；全局式路由选择算法，每个路由器计算路由时，需构建整个网络拓扑图；利用Dijkstra算法求源端到目的端网络的最短路径；Dijkstra(迪杰斯特拉)算法</span>
+<span>距离-向量路由选择算法DV：向所有隔壁路由发送信息收敛慢、会存在回路；基础是Bellman-Ford方程（简称B-F方程）；</span></p><h3 id='48-内部网关路由协议之rip协议'><span>4.8 内部网关路由协议之RIP协议</span></h3><p><span>路由信息协议 RIP(Routing Information Protocol)【应用层】，基于距离-向量的路由选择算法，较小的AS（自治系统），适合小型网络；RIP报文，封装进UDP数据报。</span></p><p><span>RIP协议特性：</span></p><p><span>RIP在度量路径时采用的是跳数（每个路由器维护自身到其他每个路由器的距离记录）；</span>
+<span>RIP的费用定义在源路由器和目的子网之间；</span>
+<span>RIP被限制的网络直径不超过15跳；</span>
+<span>和隔壁交换所有的信息，30主动一次（广播）。</span></p><h3 id='49-内部网关路由协议之ospf协议'><span>4.9 内部网关路由协议之OSPF协议</span></h3><p><span>开放最短路径优先协议 OSPF(Open Shortest Path First)【网络层】，基于链路状态的路由选择算法（即Dijkstra算法），较大规模的AS ，适合大型网络，直接封装在IP数据报传输。</span></p><p><span>OSPF协议优点：</span></p><p><span>安全；</span>
+<span>支持多条相同费用路径；</span>
+<span>支持区别化费用度量；</span>
+<span>支持单播路由和多播路由；</span>
+<span>分层路由。</span>
+<span>RIP与OSPF的对比（路由算法决定其性质）：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztocz81fj30z80bptah.jpg" referrerpolicy="no-referrer" alt="0455a0dbe6b9689b32a117e9ab2db3e0"></p><h3 id='410外部网关路由协议之bgp协议'><span>4.10外部网关路由协议之BGP协议</span></h3><p><span>BGP（Border Gateway Protocol）边际网关协议【应用层】：是运行在AS之间的一种协议,寻找一条好路由：首次交换全部信息，以后只交换变化的部分,BGP封装进TCP报文段.</span></p><h2 id='五传输层'><span>五、传输层</span></h2><p><span>第一个端到端，即主机到主机的层次。传输层负责将上层数据分段并提供端到端的、可靠的或不可靠的传输。此外，传输层还要处理端到端的差错控制和流量控制问题。</span></p><p><span>传输层的任务是根据通信子网的特性，最佳的利用网络资源，为两个端系统的会话层之间，提供建立、维护和取消传输连接的功能，负责端到端的可靠数据传输。在这一层，信息传送的协议数据单元称为段或报文。</span></p><p><span>网络层只是根据网络地址将源结点发出的数据包传送到目的结点，而传输层则负责将数据可靠地传送到相应的端口。</span></p><p><span>有关网络层的重点：</span></p><p><span>传输层负责将上层数据分段并提供端到端的、可靠的或不可靠的传输以及端到端的差错控制和流量控制问题；</span>
+<span>包含的主要协议：TCP协议（Transmission Control Protocol，传输控制协议）、UDP协议（User Datagram Protocol，用户数据报协议）；</span>
+<span>重要设备：网关。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztoof523j31400i1jst.jpg" referrerpolicy="no-referrer" alt="b8b9bdad6fe98840d4b98a7c74414c44"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztoyhxvgj31ay0h70ug.jpg" referrerpolicy="no-referrer" alt="3e813c4865d3c90d5c960e3febc02152"></p><h3 id='51-udp协议详解'><span>5.1 UDP协议详解</span></h3><p><span>UDP(User Datagram Protocol: 用户数据报协议)，是一个非常简单的协议，</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztp5w94bj30yy0fx0uk.jpg" referrerpolicy="no-referrer" alt="c1e2c463a94254f0e157e1ecb84051fb"></p><p><span>UDP协议的特点：</span></p><p><span>UDP是无连接协议；</span>
+<span>UDP不能保证可靠的交付数据；</span>
+<span>UDP是面向报文传输的；</span>
+<span>UDP没有拥塞控制；</span>
+<span>UDP首部开销很小。</span>
+<span>UDP数据报结构：</span></p><p><span>首部:8B，四字段/2B【源端口 | 目的端口 | UDP长度 | 校验和】</span></p><p><span>数据字段：应用数据</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztpi4bckj30h409yjrs.jpg" referrerpolicy="no-referrer" alt="d88a84b462bac5a52716fc0d4de42856"></p><h3 id='52-tcp协议详解'><span>5.2 TCP协议详解</span></h3><p><span>TCP(Transmission Control Protocol: 传输控制协议)，是计算机网络中非常复杂的一个协议。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztppiy7uj318r0i80uu.jpg" referrerpolicy="no-referrer" alt="7dcb2a6d779a0424a4d0dcde5ce5fdd2"></p><p><span>TCP协议的功能：</span></p><p><span>对应用层报文进行分段和重组；</span>
+<span>面向应用层实现复用与分解；</span>
+<span>实现端到端的流量控制；</span>
+<span>拥塞控制；</span>
+<span>传输层寻址；</span>
+<span>对收到的报文进行差错检测（首部和数据部分都检错）；</span>
+<span>实现进程间的端到端可靠数据传输控制。</span>
+<span>TCP协议的特点：</span></p><p><span>TCP是面向连接的协议；</span>
+<span>TCP是面向字节流的协议；</span>
+<span>TCP的一个连接有两端，即点对点通信；</span>
+<span>TCP提供可靠的传输服务；</span>
+<span>TCP协议提供全双工通信（每条TCP连接只能一对一）；</span></p><h4 id='521-tcp报文段结构'><span>5.2.1 TCP报文段结构：</span></h4><p><span>最大报文段长度：报文段中封装的应用层数据的最大长度。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztqbn9jmj318u0fz401.jpg" referrerpolicy="no-referrer" alt="90ea9c7215077889d809c598b88044b4"></p><p><span>TCP首部：</span></p><p><span>序号字段：TCP的序号是对每个应用层数据的每个字节进行编号</span>
+<span>确认序号字段：期望从对方接收数据的字节序号，即该序号对应的字节尚未收到。用ack_seq标识；</span>
+<span>TCP段的首部长度最短是20B ，最长为60字节。但是长度必须为4B的整数倍</span>
+<span>TCP标记的作用：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztqq6al3j319a0j9418.jpg" referrerpolicy="no-referrer" alt="059e327428c4997120ecd1099fd1bab5"></p><h3 id='53-可靠传输的基本原理'><span>5.3 可靠传输的基本原理</span></h3><p><span>基本原理：</span></p><p><span>不可靠传输信道在数据传输中可能发生的情况：比特差错、乱序、重传、丢失</span>
+<span>基于不可靠信道实现可靠数据传输采取的措施：</span>
+<span>差错检测：利用编码实现数据包传输过程中的比特差错检测</span>
+<span>确认：接收方向发送方反馈接收状态</span>
+<span>重传：发送方重新发送接收方没有正确接收的数据</span>
+<span>序号：确保数据按序提交</span>
+<span>计时器：解决数据丢失问题；</span>
+<span>停止等待协议：是最简单的可靠传输协议，但是该协议对信道的利用率不高。</span>
+<span>  连续ARQ(Automatic Repeat reQuest：自动重传请求)协议：滑动窗口+累计确认，大幅提高了信道的利用率。</span></p><h4 id='531tcp协议的可靠传输'><span>5.3.1TCP协议的可靠传输</span></h4><p><span>基于连续ARQ协议，在某些情况下，重传的效率并不高，会重复传输部分已经成功接收的字节。</span></p><h4 id='532-tcp协议的流量控制'><span>5.3.2 TCP协议的流量控制</span></h4><p><span>流量控制：让发送方发送速率不要太快，TCP协议使用滑动窗口实现流量控制。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztr1y0btj31aq0qe426.jpg" referrerpolicy="no-referrer" alt="00f26c96e91c4bf95ef197940d0127f6"></p><h3 id='54-tcp协议的拥塞控制'><span>5.4 TCP协议的拥塞控制</span></h3><p><span>拥塞控制与流量控制的区别：流量控制考虑点对点的通信量的控制，而拥塞控制考虑整个网络，是全局性的考虑。拥塞控制的方法：慢启动算法+拥塞避免算法。</span></p><p><span>慢开始和拥塞避免：</span></p><p><span>【慢开始】拥塞窗口从1指数增长；</span>
+<span>到达阈值时进入【拥塞避免】，变成+1增长；</span>
+<span>【超时】，阈值变为当前cwnd的一半（不能&lt;2）；</span>
+<span>再从【慢开始】，拥塞窗口从1指数增长。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztrha8q1j30c5069dg1.jpg" referrerpolicy="no-referrer" alt="6fff690ce568963043be6792251f4904"></p><p><span>快重传和快恢复：</span></p><p><span>发送方连续收到3个冗余ACK，执行【快重传】，不必等计时器超时；</span>
+<span>执行【快恢复】，阈值变为当前cwnd的一半（不能&lt;2），并从此新的ssthresh点进入【拥塞避免】。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztrvrwkmj30gc06hjrx.jpg" referrerpolicy="no-referrer" alt="77ff4adc711a615a88840a8abd37f1a0"></p><h3 id='55-tcp连接的三次握手重要）'><span>5.5 TCP连接的三次握手（重要）</span></h3><p><span>TCP三次握手使用指令：</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxzts460h5j31ac0judio.jpg" referrerpolicy="no-referrer" alt="f93fcf682b6e89b628ee458693f5cd32"></p><p><span>面试常客：为什么需要三次握手？</span></p><p><span>第一次握手：客户发送请求，此时服务器知道客户能发；</span>
+<span>第二次握手：服务器发送确认，此时客户知道服务器能发能收；</span>
+<span>第三次握手：客户发送确认，此时服务器知道客户能收。</span>
+<span>建立连接（三次握手）：</span></p><p><span>第一次：客户向服务器发送连接请求段，建立连接请求控制段（SYN=1），表示传输的报文段的第一个数据字节的序列号是x，此序列号代表整个报文段的序号（seq=x）；客户端进入 SYN_SEND （同步发送状态）；</span></p><p><span>第二次：服务器发回确认报文段，同意建立新连接的确认段（SYN=1），确认序号字段有效（ACK=1），服务器告诉客户端报文段序号是y（seq=y），表示服务器已经收到客户端序号为x的报文段，准备接受客户端序列号为x+1的报文段（ack_seq=x+1）；服务器由LISTEN进入SYN_RCVD （同步收到状态）;</span></p><p><span>第三次:客户对服务器的同一连接进行确认.确认序号字段有效(ACK=1),客户此次的报文段的序列号是x+1(seq=x+1),客户期望接受服务器序列号为y+1的报文段(ack_seq=y+1);当客户发送ack时，客户端进入ESTABLISHED 状态;当服务收到客户发送的ack后，也进入ESTABLISHED状态;第三次握手可携带数据;</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztsezdmwj30ra0e90v1.jpg" referrerpolicy="no-referrer" alt="1ad3ae0f896df40cfe163e93ca43ab11"></p><h3 id='56-tcp连接的四次挥手重要）'><span>5.6 TCP连接的四次挥手（重要）</span></h3><p><span>释放连接（四次挥手）</span></p><p><span>第一次：客户向服务器发送释放连接报文段，发送端数据发送完毕，请求释放连接（FIN=1），传输的第一个数据字节的序号是x（seq=x）；客户端状态由ESTABLISHED进入FIN_WAIT_1（终止等待1状态）；</span></p><p><span>第二次：服务器向客户发送确认段，确认字号段有效（ACK=1），服务器传输的数据序号是y（seq=y），服务器期望接收客户数据序号为x+1（ack_seq=x+1）;服务器状态由ESTABLISHED进入CLOSE_WAIT（关闭等待）； 客户端收到ACK段后，由FIN_WAIT_1进入FIN_WAIT_2；</span></p><p><span>第三次:服务器向客户发送释放连接报文段，请求释放连接（FIN=1），确认字号段有效（ACK=1），表示服务器期望接收客户数据序号为x+1（ack_seq=x+1）;表示自己传输的第一个字节序号是y+1（seq=y+1）；服务器状态由CLOSE_WAIT 进入 LAST_ACK （最后确认状态）；</span></p><p><span>第四次：客户向服务器发送确认段，确认字号段有效（ACK=1），表示客户传输的数据序号是x+1（seq=x+1），表示客户期望接收服务器数据序号为y+1+1（ack_seq=y+1+1）；客户端状态由FIN_WAIT_2进入TIME_WAIT，等待2MSL时间，进入CLOSED状态；服务器在收到最后一次ACK后，由LAST_ACK进入CLOSED；</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztsp7mhrj30qw0g4wgn.jpg" referrerpolicy="no-referrer" alt="b55a473f789c42124afbfd0e82a9e811"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztszks6mj318x0kqmz8.jpg" referrerpolicy="no-referrer" alt="1fb9c88b10de4d3a77367645d5e93224"></p><p>&nbsp;</p><p><span>为什么需要等待2MSL?</span></p><p><span>最后一个报文没有确认；</span>
+<span>确保发送方的ACK可以到达接收方；</span>
+<span>2MSL时间内没有收到，则接收方会重发；</span>
+<span>确保当前连接的所有报文都已经过期。</span></p><h2 id='六应用层'><span>六、应用层</span></h2><p><span>为操作系统或网络应用程序提供访问网络服务的接口。</span></p><p><span>应用层重点：</span></p><p><span>数据传输基本单位为报文；</span>
+<span>包含的主要协议：FTP（文件传送协议）、Telnet（远程登录协议）、DNS（域名解析协议）、SMTP（邮件传送协议），POP3协议（邮局协议），HTTP协议（Hyper Text Transfer Protocol）。</span></p><h3 id='61-dns详解'><span>6.1 DNS详解</span></h3><p><span>DNS（Domain Name System:域名系统）【C/S，UDP，端口53】：解决IP地址复杂难以记忆的问题,存储并完成自己所管辖范围内主机的 域名 到 IP 地址的映射。</span></p><p><span>域名解析的顺序：【1】浏览器缓存，【2】找本机的hosts文件，【3】路由缓存，【4】找DNS服务器（本地域名、顶级域名、根域名）-&gt;迭代解析、递归查询。</span></p><p><span>1.IP—&gt;DNS服务—&gt;便于记忆的域名</span>
+<span>  2.域名由点、字母和数字组成，分为顶级域（com，cn，net，gov，org）、二级域（baidu,taobao,qq,alibaba）、三级域（www）(12-2-0852)</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxzttbngqzj317i0k3774.jpg" referrerpolicy="no-referrer" alt="55345eaf75c7aecad38bf2cbcd652a2f"></p><h3 id='62-dhcp协议详解'><span>6.2 DHCP协议详解</span></h3><p><span>DHCP（Dynamic Configuration Protocol:动态主机设置协议）：是一个局域网协议，是应用UDP协议的应用层协议。 作用：为临时接入局域网的用户自动分配IP地址。</span></p><h3 id='63-http协议详解'><span>6.3 HTTP协议详解</span></h3><p><span>文件传输协议（FTP）：控制连接（端口21）：传输控制信息（连接、传输请求），以7位ASCII码的格式。整个会话期间一直打开。</span></p><p><span>HTTP（HyperText Transfer Protocol:超文本传输协议）【TCP，端口80】：是可靠的数据传输协议，浏览器向服务器发收报文前，先建立TCP连接，HTTP使用TCP连接方式（HTTP自身无连接）。</span></p><p><span>HTTP请求报文方式：</span></p><p><span>GET：请求指定的页面信息，并返回实体主体；</span>
+<span>POST：向指定资源提交数据进行处理请求；</span>
+<span>DELETE：请求服务器删除指定的页面；</span>
+<span>HEAD：请求读取URL标识的信息的首部，只返回报文头；</span>
+<span>OPETION：请求一些选项的信息；</span>
+<span>PUT：在指明的URL下存储一个文档。</span></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxzttnjm3nj31220hjq4s.jpg" referrerpolicy="no-referrer" alt="f182c08fd961d57d8e03263df7469c23"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxzttvdv4gj30rd0400ta.jpg" referrerpolicy="no-referrer" alt="dc7492094737809454912e47f9d54ff8"></p><h4 id='631-http工作的结构'><span>6.3.1 HTTP工作的结构</span></h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxztu65zw1j318x0l6abn.jpg" referrerpolicy="no-referrer" alt="a5e08c253ea159f3ef609ae157f08750"></p><h3 id='632-https协议详解'><span>6.3.2 HTTPS协议详解</span></h3><p><span>HTTPS(Secure)是安全的HTTP协议，端口号443。基于HTTP协议，通过SSL或TLS提供加密处理数据、验证对方身份以及数据完整性保护。</span></p></div></div>
+</body>
+</html>
